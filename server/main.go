@@ -21,8 +21,7 @@ func main() {
 	app := fiber.New()
 
 	app.Use(cors.New(cors.Config{
-		// AllowOrigins: "http://localhost:3000",
-		AllowOrigins: "https://go-react-todo-client.vercel.app",
+		AllowOrigins: "http://localhost:3000",
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
 
