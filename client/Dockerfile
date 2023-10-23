@@ -7,9 +7,8 @@ COPY package.json yarn.lock ./
 
 RUN apk add curl && \
     yarn install && yarn cache clean
-# COPY package*.json ./
 
-RUN yarn install && yarn cache clean
+
 COPY . .
 
 EXPOSE 8080
