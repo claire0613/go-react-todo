@@ -11,7 +11,9 @@ export interface Todo {
   done: boolean;
 }
 
-export const ENDPOINT = "http://localhost:4000";
+// export const ENDPOINT = "http://localhost:4000";
+export const ENDPOINT = "https://go-react-todo-server.onrender.com";
+
 
 const fetcher = (url: string) =>
   fetch(`${ENDPOINT}/${url}`).then((r) => r.json());

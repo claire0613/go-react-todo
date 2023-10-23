@@ -1,11 +1,19 @@
-# FROM node:14
-# WORKDIR /client
-# COPY package.json yarn.lock ./
-# RUN yarn
-# COPY . .
-# RUN yarn build
-# EXPOSE 3000
-# CMD ["yarn", "dev"]
+FROM node:alpine
+# 安装 bash
+RUN apk update && apk add bash
+WORKDIR /client
+
+COPY package.json yarn.lock ./
+
+RUN apk add curl && \
+    yarn install && yarn cache clean
+# COPY package*.json ./
+
+RUN yarn install && yarn cache clean
+COPY . .
+
+EXPOSE 8080
+CMD ["yarn", "dev","--port","8080","--host", "0.0.0.0"]
 
 
 #  docker build -t go_react_todos/client .           
