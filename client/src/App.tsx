@@ -12,7 +12,7 @@ export interface Todo {
 }
 
 // export const ENDPOINT = "http://localhost:4000";
-export const ENDPOINT = "https://go-react-todo-server.onrender.com";
+export const ENDPOINT = "go-reat-todos-server-production.up.railway.app";
 
 
 const fetcher = (url: string) =>
