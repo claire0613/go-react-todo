@@ -21,7 +21,7 @@ func main() {
 	app := fiber.New()
 
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "*",
+		AllowOrigins: "https://go-react-todo-client.onrender.com",
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
 
