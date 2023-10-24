@@ -1,0 +1,15 @@
+version: "3"
+services:
+  client:
+    build:
+      context: ./client # 这里应该是你前端应用的 Dockerfile 所在目录
+    ports:
+      - "8080:8080" # 映射前端服务的端口
+    depends_on:
+      - backend # 前端服务依赖后端服务
+
+  backend:
+    build:
+      context: ./server # 这里应该是你后端应用的 Dockerfile 所在目录
+    ports:
+      - "4000:4000" # 映射后端服务的端口
